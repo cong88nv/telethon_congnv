@@ -82,20 +82,20 @@ export default {
           'cate_id': this.addKeyWords.cate_id
         })
       }
-      fetch('http://localhost:8001/keywords', requestOptions).then(async response => {
+      fetch('http://ssh.lalasoft.vn:8001/keywords', requestOptions).then(async response => {
         this.$router.go(this.$router.currentRoute)
       })
     },
     getKeyWorlds() {
       this.listLoading = true
-      fetch('http://localhost:8001/keywords').then(async response => {
+      fetch('http://ssh.lalasoft.vn:8001/keywords').then(async response => {
         const datas = await response.json()
         this.keywords = datas
         this.listLoading = false
       })
     },
     getCategory(id) {
-      fetch('http://localhost:8001/categories?type_id=3').then(async response => {
+      fetch('http://ssh.lalasoft.vn:8001/categories?type_id=3').then(async response => {
         const datas = await response.json()
         for (var i = 0; i < datas.length; i += 1) {
           this.arrayCates.push({ name: datas[i].name, value: datas[i].id })

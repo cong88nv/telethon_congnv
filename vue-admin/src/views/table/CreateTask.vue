@@ -123,7 +123,7 @@ export default{
                 'category_id': this.category_id
               })
             };
-            fetch('http://localhost:8001/sessions', requestOptions)
+            fetch('http://ssh.lalasoft.vn:8001/sessions', requestOptions)
             .then(async response => {
                let data = await response.json();
                 console.log(data);
@@ -138,7 +138,7 @@ export default{
             console.log(payload)
         },
         getCategory(id) {
-            fetch('http://localhost:8001/categories?id=' + id)
+            fetch('http://ssh.lalasoft.vn:8001/categories?id=' + id)
             .then(async response => {
                 let datas = await response.json();
                 console.log(datas);

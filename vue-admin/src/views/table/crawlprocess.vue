@@ -136,8 +136,8 @@ export default {
           'category_replace_id': this.addCrawlProcess.category_replace_word
         })
       }
-      fetch('http://localhost:8001/craw-process', requestOptions).then(async response => {
-        fetch('http://localhost:8001/reload-db').then(async response => {
+      fetch('http://ssh.lalasoft.vn:8001/craw-process', requestOptions).then(async response => {
+        fetch('http://ssh.lalasoft.vn:8001/reload-db').then(async response => {
           const datas = await response.json()
           console.log(datas)
         })
@@ -146,35 +146,35 @@ export default {
     },
     getReplaceWorlds() {
       this.listLoading = true
-      fetch('http://localhost:8001/craw-process').then(async response => {
+      fetch('http://ssh.lalasoft.vn:8001/craw-process').then(async response => {
         const datas = await response.json()
         this.crawlProcess = datas
         this.listLoading = false
       })
     },
     getCategory(id) {
-      fetch('http://localhost:8001/categories?type_id=1').then(async response => {
+      fetch('http://ssh.lalasoft.vn:8001/categories?type_id=1').then(async response => {
         const datas = await response.json()
         for (var i = 0; i < datas.length; i += 1) {
           this.arrayCatesCrawl.push({ name: datas[i].name, value: datas[i].id })
         }
         console.log(this.arrayCatesCrawl)
       })
-      fetch('http://localhost:8001/categories?type_id=2').then(async response => {
+      fetch('http://ssh.lalasoft.vn:8001/categories?type_id=2').then(async response => {
         const datas = await response.json()
         for (var i = 0; i < datas.length; i += 1) {
           this.arrayCatesPost.push({ name: datas[i].name, value: datas[i].id })
         }
         console.log(this.arrayCatesPost)
       })
-            fetch('http://localhost:8001/categories?type_id=3').then(async response => {
+            fetch('http://ssh.lalasoft.vn:8001/categories?type_id=3').then(async response => {
         const datas = await response.json()
         for (var i = 0; i < datas.length; i += 1) {
           this.arrayCatesFilterWord.push({ name: datas[i].name, value: datas[i].id })
         }
         console.log(this.arrayCatesFilterWord)
       })
-      fetch('http://localhost:8001/categories?type_id=4').then(async response => {
+      fetch('http://ssh.lalasoft.vn:8001/categories?type_id=4').then(async response => {
         const datas = await response.json()
         for (var i = 0; i < datas.length; i += 1) {
           this.arrayCatesReplaceWord.push({ name: datas[i].name, value: datas[i].id })

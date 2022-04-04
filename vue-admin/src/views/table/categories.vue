@@ -92,14 +92,14 @@ export default {
           'type_id': this.category.task_id
         })
       }
-      fetch('http://localhost:8001/categories', requestOptions).then(async response => {
+      fetch('http://ssh.lalasoft.vn:8001/categories', requestOptions).then(async response => {
         this.$router.go(this.$router.currentRoute)
         console.log(response)
       })
     },
     fetchData() {
       this.listLoading = true
-      fetch('http://localhost:8001/categories').then(async response => {
+      fetch('http://ssh.lalasoft.vn:8001/categories').then(async response => {
         const datas = await response.json()
         this.list = datas
         this.listLoading = false

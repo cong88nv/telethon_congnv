@@ -60,7 +60,7 @@ export default{
                 'code': this.session.code
               })
             };
-            fetch('http://localhost:8001/verify-code', requestOptions)
+            fetch('http://ssh.lalasoft.vn:8001/verify-code', requestOptions)
             .then(async response => {
                const data = await response.json();
                 console.log(data);

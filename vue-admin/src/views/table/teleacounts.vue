@@ -129,7 +129,7 @@ export default {
           'category_id': this.telesession.category_id
         })
       }
-      fetch('http://localhost:8001/sessions', requestOptions).then(async response => {
+      fetch('http://ssh.lalasoft.vn:8001/sessions', requestOptions).then(async response => {
         // this.$router.go(this.$router.currentRoute)
         const data = await response.json()
         if (data.status === 1) {
@@ -159,14 +159,14 @@ export default {
     },
     fetchData() {
       this.listLoading = true
-      fetch('http://localhost:8001/sessions').then(async response => {
+      fetch('http://ssh.lalasoft.vn:8001/sessions').then(async response => {
         const datas = await response.json()
         this.list = datas
         this.listLoading = false
       })
     },
     getCategory(id) {
-      fetch('http://localhost:8001/categories?type_id='+ id).then(async response => {
+      fetch('http://ssh.lalasoft.vn:8001/categories?type_id='+ id).then(async response => {
         const datas = await response.json()
         console.log(datas)
         for (var i = 0; i < datas.length; i += 1) {

@@ -171,7 +171,7 @@ const register = () => {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(session.value)
   };
-  fetch('http://localhost:8001/sessions', requestOptions)
+  fetch('http://ssh.lalasoft.vn:8001/sessions', requestOptions)
     .then(async response => {
       const data = await response.json();
       // check for error response
